@@ -28,6 +28,7 @@ if ing_list:
     for fruit in ing_list:
         ing_string += fruit
         ing_string += ' '
+        st.write(fruit)
         st.subheader = fruit+' nutrition info'
         fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit)
         #st.text(fruityvice_response)
