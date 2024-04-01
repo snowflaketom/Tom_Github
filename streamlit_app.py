@@ -17,13 +17,13 @@ st.write('The name of your smoothie will be:', name_on_order)
 
 cnx = st.connection("snowflake")
 session = cnx.session()
-my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('SEARCH_ON'))
-st.dataframe(data=my_dataframe, use_container_width = True)
+my1_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('SEARCH_ON'))
+st.dataframe(data=my1_dataframe, use_container_width = True)
 #pd_df = my_dataframe.to_pandas()
 #st.dataframe(pd_df)
 st.stop
 
-ing_list=st.multiselect('Choose up to 5 ing.',my_dataframe,max_selections=5)
+ing_list=st.multiselect('Choose up to 5 ing.',my1_dataframe,max_selections=5)
 
 if ing_list:
     ing_string = ''
