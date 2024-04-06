@@ -36,7 +36,7 @@ if ing_list:
         st.write('The search value for ', fruit,' is ', search_on, '.')
 
         #st.subheader(fruit + ' nutrition info')
-        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit)
+        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+search_on)
         #st.text(fruityvice_response)
         fv_df = st.dataframe(data=fruityvice_response.json(), use_container_width = True) 
 
